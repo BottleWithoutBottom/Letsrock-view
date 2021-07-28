@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": ">=7.3.0",
-    "letsrock/letsenv": "1.*",
+    "letsrock/letsenv": "1.*"
   },
   "autoload": {
     "classmap": ["src"]

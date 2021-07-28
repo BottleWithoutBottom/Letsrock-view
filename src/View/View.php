@@ -4,7 +4,7 @@ namespace Bitrock\View;
 use Bitrock\LetsEnv;
 use Bitrock\Models\Singleton;
 
-class View extends Singleton
+class View
 {
     public CONST VIEW_DIR = 'VIEW_DIR';
 
@@ -20,12 +20,5 @@ class View extends Singleton
         ob_start();
         require(LetsEnv::getInstance()->getEnv(static::VIEW_DIR) . $viewName);
         return ob_get_clean();
-    }
-
-    public static function preHook()
-    {
-        $letsEnv = LetsEnv::getInstance();
-        return !empty($letsEnv->getEnv(static::VIEW_DIR))
-            && is_dir($letsEnv->getEnv(static::VIEW_DIR));
     }
 }
